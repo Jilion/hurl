@@ -208,10 +208,13 @@ module Hurl
 
     # update auth based on auth type
     def add_auth(auth, curl, params)
-      if auth == 'basic'
+      case auth
+      when 'basic'
         username, password = params.values_at(:username, :password)
         encoded = Base64.encode64("#{username}:#{password}").gsub("\n",'')
         curl.headers['Authorization'] = "Basic #{encoded}"
+      when 'signed_url'
+        curl.url = UrlSigner.signed_url(curl.url, params[:digest_key])
       end
     end
 

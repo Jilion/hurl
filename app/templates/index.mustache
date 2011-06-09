@@ -77,9 +77,20 @@
       />
       HTTP basic
     </label>
+    <label>
+      <input type="radio" name="auth" value="signed_url"
+        {{# hurl_signed_url? }}
+          checked="checked"
+        {{/ hurl_signed_url? }}
+      />
+      Signed URL
+    </label>
     <div id="basic-auth-fields" style="display:none;">
       <input type="text" name="username" class="form-alpha" title="username" value="{{ hurl_username }}"/>
       <input type="password" name="password" class="form-beta" title="password" value="{{ hurl_password }}"/>
+    </div>
+    <div id="signed_url-auth-fields" style="display:none;">
+      <input type="text" name="digest_key" class="form-alpha" title="digest key" value="{{ hurl_digest_key }}"/>
     </div>
   </p>
   <p id="header-selection">

@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/Jilion/url_signer.git
+  revision: 7081320cbc600eab54f010e17e0baa0f818346fd
+  specs:
+    url_signer (0.0.1)
+      ruby-hmac (>= 0.4.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -17,6 +24,7 @@ GEM
     rack (1.2.1)
     rest-client (1.5.1)
       mime-types (>= 1.16)
+    ruby-hmac (0.4.0)
     shotgun (0.8)
       rack (>= 1.0)
     sinatra (1.1.0)
@@ -45,4 +53,5 @@ DEPENDENCIES
   shotgun
   sinatra (~> 1.0)
   sinatra_auth_github
+  url_signer!
   yajl-ruby (~> 0.7.8)

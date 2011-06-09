@@ -116,8 +116,13 @@ $(document).ready(function() {
   // add auth
   $('input[name=auth]').change(function() {
     if ($(this).attr('value') == 'basic') {
+      $('#signed_url-auth-fields').hide()
       $('#basic-auth-fields').show()
       $('#basic-auth-fields .form-alpha').focus()
+    } else if ($(this).attr('value') == 'signed_url') {
+      $('#basic-auth-fields').hide()
+      $('#signed_url-auth-fields').show()
+      $('#signed_url-auth-fields .form-alpha').focus()
     } else {
       $('#basic-auth-fields').hide()
     }
